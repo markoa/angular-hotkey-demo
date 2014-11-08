@@ -1,11 +1,12 @@
 function HotkeysCtrl ($scope, hotkeys) {
   $scope.volume = 5;
 
-  $scope.selected = undefined;
-  $scope.autocompleteResults = [
+  $scope.dataset = [
     {'name': 'master', 'type': 'Branch'},
     {'name': 'autocomplete-demo', 'type': 'Branch'},
-    {'name': 'production', 'type': 'Server'}
+    {'name': 'hotfix-custom-template', 'type': 'Branch'},
+    {'name': 'production', 'type': 'Server'},
+    {'name': 'staging', 'type': 'Server'}
   ];
 
   hotkeys.add({

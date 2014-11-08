@@ -19,6 +19,14 @@
 
   <div class="container">
     <nav class="navbar navbar-default" ng-app="hotkeysApp">
+
+      <script type="text/ng-template" id="autocompleteResult.html">
+        <a>
+          <span><strong>{{ match.model.type }}</strong>:</span>
+          <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+        </a>
+      </script>
+
       <div class="row page-header" ng-controller="HotkeysCtrl">
         <div class="col-xs-3">
           <h1>Hotkeys demo</h1>
@@ -28,8 +36,9 @@
           <form class="navbar-form navbar-left" role="search" style="margin-top: 1.5em;">
             <div class="form-group">
               <input type="text" placeholder="Search" class="form-control" id="searchBox"
-                     ng-model="selectedResult"
-                     typeahead="result as result.name for result in autocompleteResults | filter:{name:$viewValue} | limitTo:8">
+                     ng-model="selected"
+                     typeahead="result as result.name for result in dataset | filter:{name:$viewValue} | limitTo:8"
+                     typeahead-template-url="autocompleteResult.html">
             </div>
           </form>
         </div>
