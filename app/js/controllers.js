@@ -1,6 +1,13 @@
 function HotkeysCtrl ($scope, hotkeys) {
   $scope.volume = 5;
 
+  $scope.selected = undefined;
+  $scope.autocompleteResults = [
+    {'name': 'master', 'type': 'Branch'},
+    {'name': 'autocomplete-demo', 'type': 'Branch'},
+    {'name': 'production', 'type': 'Server'}
+  ];
+
   hotkeys.add({
     combo: 'command+up',
     description: 'Increase volume',
@@ -31,6 +38,6 @@ function HotkeysCtrl ($scope, hotkeys) {
   });
 }
 
-var hotkeysApp = angular.module('hotkeysApp', ['cfp.hotkeys']);
+var hotkeysApp = angular.module('hotkeysApp', ['cfp.hotkeys', 'ui.bootstrap']);
 
 hotkeysApp.controller('HotkeysCtrl', HotkeysCtrl);
