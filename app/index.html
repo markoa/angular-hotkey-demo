@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Hotkeys &amp; search with Angular</title>
+
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="../bower_components/angular-hotkeys/build/hotkeys.css">
+
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-hotkeys/build/hotkeys.js"></script>
+
+  <script src="js/controllers.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <nav class="navbar navbar-default" ng-app="hotkeysApp">
+      <div class="row page-header" ng-controller="HotkeysCtrl">
+        <div class="col-xs-3">
+          <h1>Hotkeys demo</h1>
+        </div>
+
+        <div class="col-xs-3">
+          <form class="navbar-form navbar-left" role="search" style="margin-top: 1.5em;">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" id="searchBox">
+            </div>
+          </form>
+        </div>
+
+        <div class="col-xs-6">
+          <h5>Current volume: {{ volume }}</h5>
+          <p>Press "?" for help.</p>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+</body>
+</html>
